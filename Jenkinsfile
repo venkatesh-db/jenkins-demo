@@ -1,3 +1,4 @@
+
 pipeline {
   agent any
   stages {
@@ -8,13 +9,13 @@ pipeline {
     }
     stage('Install') {
       steps {
-        sh 'npm install'
-        sh 'npx playwright install --with-deps'
+        bat 'npm install'
+        bat 'npx playwright install --with-deps'
       }
     }
     stage('Test') {
       steps {
-        sh 'npm test'
+        bat 'npm test'
       }
     }
   }
@@ -24,4 +25,3 @@ pipeline {
     }
   }
 }
-
